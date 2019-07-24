@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
+import FooterBar from './Components/FooterBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+        <div>
+          App
+          {
+            this.props.children
+          }
+
+          {
+              this.props.isShowFooterBar ?
+                  <FooterBar />
+                  : null
+          }
+
+        </div>
+    );
+  }
 }
 
-export default App;
+let mapState2Props = function(state) {
+    return {
+        isShowFooterBar: state.isShowFooterBar
+    }
+};
+
+export default connect(mapState2Props)(App);
