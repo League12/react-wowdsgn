@@ -1,20 +1,32 @@
 import React from 'react';
-import axios from 'axios';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import HomeHeader from './HomeHeader';
+import HomeNav from './HomeNav';
+import HomeRecommend from './HomeRecommend';
+import HomeFurniture from './HomeFurniture';
+import HomeFurnishing from './HomeFurnishing';
+import HomeActivity from './HomeActivity';
+
 
 
 class Home extends React.Component {
 
-    componentWillMount() {
-        axios.get("/v2/page?pageId=1&tabId=1&currentPage=1&pageSize=8&_=1563947253000")
-            .then(res => {
-            console.log(res)
-        });
-    }
+
 
     render() {
         return (
             <div>
-                Home
+                <HomeHeader />
+                <HomeNav />
+
+                <Switch>
+                    <Route path="/home/recommend" component={HomeRecommend} />
+                    <Route path="/home/furniture" component={HomeFurniture} />
+                    <Route path="/home/furnishing" component={HomeFurnishing} />
+                    <Route path="/home/activity" component={HomeActivity} />
+                    <Redirect from="/home/" to="/home/recommend" />
+                </Switch>
+
             </div>
         );
     }
