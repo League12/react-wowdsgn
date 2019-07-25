@@ -7,11 +7,7 @@ import HomeFurniture from './HomeFurniture';
 import HomeFurnishing from './HomeFurnishing';
 import HomeActivity from './HomeActivity';
 
-
-
 class Home extends React.Component {
-
-
 
     render() {
         return (

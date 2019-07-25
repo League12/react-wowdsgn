@@ -3,10 +3,9 @@ import axios from 'axios';
 import RecommendBanner from './RecommendBanner';
 import RecommendProduct from './RecommendProduct';
 import RecommendStore from './RecommendStore';
-import css from './index.module.scss';
+import Bottom from '../../../Components/Bottom';
 
 class HomeRecommend extends React.Component {
-
 
     state = {
         banner: null,
@@ -28,6 +27,12 @@ class HomeRecommend extends React.Component {
                     store: res.data.data.modules[4].moduleContent
                 })
             });
+    }
+
+    componentWillUnmount() {
+        this.setState = () => {
+            return;
+        }
     }
 
     render() {
@@ -52,10 +57,7 @@ class HomeRecommend extends React.Component {
                 {
                     this.state.store ? <RecommendStore info={this.state.store} /> : null
                 }
-
-                <div className={css.bottom}>
-                    已经到底了
-                </div>
+                <Bottom />
             </div>
         );
     }

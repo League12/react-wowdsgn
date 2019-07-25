@@ -1,18 +1,17 @@
 import React from 'react';
 import { Carousel } from 'antd';
-import css from './index.module.scss';
+import css from './index.module.scss'
 
-class RecommendBanner extends React.Component {
-
+class FurnitureBanner extends React.Component {
     render() {
         return (
-            <div className={css.recommendBanner}>
+            <div className={css.furnitureBanner}>
                 <Carousel autopaly={false} infinite dots={true}>
                     {
                         this.props.info.banners.map((item) => {
                             return (
                                 <img src={item.bannerImgSrc} alt={item.bannerTitle} key={item.id}
-                                    onClick={this.handleImgClick.bind(this, item.bannerLinkUrl)}/>
+                                     onClick={this.handleImgClick.bind(this, item.bannerLinkUrl)}/>
                             );
                         })
                     }
@@ -26,4 +25,4 @@ class RecommendBanner extends React.Component {
     }
 }
 
-export default RecommendBanner;
+export default FurnitureBanner;
