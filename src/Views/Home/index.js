@@ -8,11 +8,10 @@ import HomeFurnishing from './HomeFurnishing';
 import HomeActivity from './HomeActivity';
 
 class Home extends React.Component {
-
     render() {
         return (
             <div>
-                <HomeHeader />
+                <HomeHeader {...this.props} />
                 <HomeNav />
 
                 <Switch>

@@ -1,7 +1,9 @@
-div.furnitureHangers {
-
+div.FurnishingDesign {
   border-top: .15rem solid #f5f5f5;
   padding-top: .23rem;
+  &>div {
+    height: 100%;
+  }
   h2 {
     height: .38rem;
     line-height: .38rem;
@@ -16,21 +18,15 @@ div.furnitureHangers {
     color: #808080;
     text-align: center;
   }
+
   ul {
-    width: 100%;
-    border-top: 1px solid #f5f5f5;
-    display: flex;
-    flex-wrap: wrap;
     li {
-      width: 50%;
-      height: 2.95rem;
-      border-bottom: 1px solid #f5f5f5;
       img {
         width: 100%;
       }
       p {
         width: 100%;
-        font-size: .12rem;
+        font-size: .11rem;
         color: #808080;
         height: .15rem;
         line-height: .15rem;
@@ -38,19 +34,15 @@ div.furnitureHangers {
         overflow: hidden;
         text-overflow: ellipsis;
         margin-bottom: 0;
-        padding: 0 .15rem;
+        padding: 0 .1rem;
       }
       span {
-        display: block;
-        height: .32rem;
-        line-height: .32rem;
-        font-size: .12rem;
+        height: .25rem;
+        line-height: .25rem;
+        font-size: .09rem;
         color: black;
-        padding: 0 .15rem;
+        padding: 0 .1rem;
       }
-    }
-    li:nth-of-type(odd) {
-      border-right: 1px solid #f5f5f5;
     }
   }
 
@@ -73,5 +65,4 @@ div.furnitureHangers {
       background-position: right center;
     }
   }
-
 }

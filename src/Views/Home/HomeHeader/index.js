@@ -8,9 +8,12 @@ class HomeHeader extends React.Component {
                 <h1>
                     <img src="/imgs/league/titleView.png" alt="titleLogo"/>
                 </h1>
-                <input type="text" placeholder="搜索我的尖叫好物"/>
+                <input type="text" placeholder="搜索我的尖叫好物" onFocus={this.handleInputFocus.bind(this)}/>
             </div>
         );
+    }
+    handleInputFocus() {
+        this.props.history.push("/search");
     }
 }
 

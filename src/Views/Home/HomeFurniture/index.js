@@ -24,7 +24,6 @@ class HomeFurniture extends React.Component {
     componentWillMount() {
         axios.get("/v2/page?pageId=1&tabId=10005&currentPage=1&pageSize=8&_=1563968287606")
             .then(res => {
-                console.log(res.data.data.modules);
             this.setState({
                 banner: res.data.data.modules[0].moduleContent,
                 sofas: res.data.data.modules[1],

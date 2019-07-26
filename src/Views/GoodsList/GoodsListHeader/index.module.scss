@@ -1,0 +1,31 @@
+div.goodsListHeader {
+  height: .44rem;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  input {
+    width: 2.7rem;
+    height: .28rem;
+    border: 0;
+    background-color: #f5f5f5;
+    border-radius: .14rem;
+    margin-left: .18rem;
+    margin-right: .08rem;
+    padding-left: .33rem;
+    font-size: .11rem;
+    color: #757575;
+    background-image: url("/imgs/league/searchIcon-e.png");
+    background-repeat: no-repeat;
+    background-position: .1rem center;
+    background-size: .2rem .2rem;
+  }
+  img:nth-of-type(1) {
+    width: .15rem;
+    height: .15rem;
+    margin-right: .26rem;
+  }
+  img:nth-of-type(2) {
+    width: .26rem;
+    height: .26rem;
+  }
+}
