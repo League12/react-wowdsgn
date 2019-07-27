@@ -67,7 +67,8 @@ class GoodsListGroup extends React.Component {
                                     this.state.datalist.map(item => {
                                         return (
                                             <li key={item.productId} onClick={() => {
-                                                this.handleLiClick(item.productId);
+                                                this.handleLiClick(item.productId, item.parentProductId,
+                                                    item.productName, item.sellPrice, item.productImg);
                                             }}>
                                                 <img src={item.productImg} alt={item.productTitle} />
                                                 <p>{item.productTitle}</p>
@@ -84,8 +85,10 @@ class GoodsListGroup extends React.Component {
         );
     }
 
-    handleLiClick(id) {
-        console.log(id)
+    handleLiClick(productId, parentProductId, productName, sellPrice, productImg) {
+        let img = productImg.replace(new RegExp("/", "g"), "\\");
+        let name = productName.replace(new RegExp("/", "g"), "\\");
+        this.props.history.push(`/detail/${JSON.stringify([productId, parentProductId, name, sellPrice, img])}`);
     }
 
     getData() {

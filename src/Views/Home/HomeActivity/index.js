@@ -38,22 +38,22 @@ class HomeActivity extends React.Component {
                 }
                 {
                     this.state.orlaKiely ?
-                        <ActivityOthers info={this.state.orlaKiely} />
+                        <ActivityOthers info={this.state.orlaKiely} {...this.props}/>
                         : null
                 }
                 {
                     this.state.saniyo ?
-                        <ActivityOthers info={this.state.saniyo} />
+                        <ActivityOthers info={this.state.saniyo} {...this.props}/>
                         : null
                 }
                 {
                     this.state.octaevo ?
-                        <ActivityOthers info={this.state.octaevo} />
+                        <ActivityOthers info={this.state.octaevo} {...this.props}/>
                         : null
                 }
                 {
                     this.state.aarikka ?
-                        <ActivityOthers info={this.state.aarikka} />
+                        <ActivityOthers info={this.state.aarikka} {...this.props}/>
                         : null
                 }
 

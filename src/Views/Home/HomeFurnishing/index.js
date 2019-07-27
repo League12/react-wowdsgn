@@ -40,47 +40,47 @@ class HomeFurnishing extends React.Component {
             <div>
                 {
                     this.state.banner ?
-                        <FurnishingBanner info={this.state.banner} />
+                        <FurnishingBanner info={this.state.banner} {...this.props}/>
                         : null
                 }
                 {
                     this.state.design ?
-                        <FurnishingDesign info={this.state.design} />
+                        <FurnishingDesign info={this.state.design} {...this.props}/>
                         : null
                 }
                 {
                     this.state.lightAndShadow ?
-                        <FurnishingOthers info={this.state.lightAndShadow} />
+                        <FurnishingOthers info={this.state.lightAndShadow} {...this.props}/>
                         : null
                 }
                 {
                     this.state.flowerOrgan ?
-                        <FurnishingOthers info={this.state.flowerOrgan} />
+                        <FurnishingOthers info={this.state.flowerOrgan} {...this.props}/>
                         : null
                 }
                 {
                     this.state.tableware ?
-                        <FurnishingOthers info={this.state.tableware} />
+                        <FurnishingOthers info={this.state.tableware} {...this.props}/>
                         : null
                 }
                 {
                     this.state.ceremony ?
-                        <FurnishingOthers info={this.state.ceremony} />
+                        <FurnishingOthers info={this.state.ceremony} {...this.props}/>
                         : null
                 }
                 {
                     this.state.showerRoom ?
-                        <FurnishingOthers info={this.state.showerRoom} />
+                        <FurnishingOthers info={this.state.showerRoom} {...this.props}/>
                         : null
                 }
                 {
                     this.state.spin ?
-                        <FurnishingOthers info={this.state.spin} />
+                        <FurnishingOthers info={this.state.spin} {...this.props}/>
                         : null
                 }
                 {
                     this.state.wall ?
-                        <FurnishingOthers info={this.state.wall} />
+                        <FurnishingOthers info={this.state.wall} {...this.props}/>
                         : null
                 }
 

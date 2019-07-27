@@ -48,37 +48,37 @@ class HomeFurniture extends React.Component {
             <div>
                 {
                     this.state.banner ?
-                        <FurnitureBanner info={this.state.banner} />
+                        <FurnitureBanner info={this.state.banner} {...this.props}/>
                         : null
                 }
                 {
                     this.state.sofas ?
-                        <FurnitureSofa info={this.state.sofas} />
+                        <FurnitureSofa info={this.state.sofas} {...this.props}/>
                         : null
                 }
                 {
                     this.state.tables ?
-                        <FurnitureTables info={this.state.tables} />
+                        <FurnitureTables info={this.state.tables} {...this.props}/>
                         : null
                 }
                 {
                     this.state.hangers ?
-                        <FurnitureHangers info={this.state.hangers} />
+                        <FurnitureHangers info={this.state.hangers} {...this.props}/>
                         : null
                 }
                 {
                     this.state.cabinet ?
-                        <FurnitureCabinet info={this.state.cabinet} />
+                        <FurnitureCabinet info={this.state.cabinet} {...this.props}/>
                         : null
                 }
                 {
                     this.state.desk ?
-                        <FurnitureDesk info={this.state.desk} />
+                        <FurnitureDesk info={this.state.desk} {...this.props}/>
                         : null
                 }
                 {
                     this.state.chair ?
-                        <FurnitureChair info={this.state.chair} />
+                        <FurnitureChair info={this.state.chair} {...this.props}/>
                         : null
                 }
 

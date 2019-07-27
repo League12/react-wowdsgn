@@ -14,7 +14,8 @@ class FurnitureSofa extends React.Component {
                         this.props.info.moduleContent.products.map((item) => {
                             return (
                                 <div key={item.productId}
-                                     onClick={this.handleDivClick.bind(this, item.productId)}>
+                                     onClick={this.handleDivClick.bind(this, item.productId, item.parentProductId,
+                                         item.productName, item.sellPrice, item.productImg)}>
                                     <img src={item.productImg} alt={item.productName}/>
                                     <p>{item.productName}</p>
                                     <span>¥{item.sellPrice}</span>
@@ -30,8 +31,10 @@ class FurnitureSofa extends React.Component {
         );
     }
 
-    handleDivClick(id) {
-        console.log(id);
+    handleDivClick(productId, parentProductId, productName, sellPrice, productImg) {
+        let img = productImg.replace(new RegExp("/", "g"), "\\");
+        let name = productName.replace(new RegExp("/", "g"), "\\");
+        this.props.history.push(`/detail/${JSON.stringify([productId, parentProductId, name, sellPrice, img])}`);
     }
 }
 
