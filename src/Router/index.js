@@ -22,8 +22,8 @@ let router = <Provider store={store}>
                     <Route path="/shopcar" component={Shopcar} />
                     <Route path="/message" component={Message} />
                     <Route path="/center" component={Center} />
-                    <Route path="/detail/:id" component={Detail} />
-                    <Route path="/goodslist" component={GoodsList} />
+                    <Route path="/detail/:goodId" component={Detail} />
+                    <Route path="/goodslist/:goodsName" component={GoodsList} />
                     <Route path="/search" component={Search} />
                     <Redirect from="/" to="/home" />
                 </Switch>

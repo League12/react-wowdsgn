@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
+import 'antd/dist/antd.css';
 import FooterBar from './Components/FooterBar';
 
 class App extends React.Component {
   render() {
     return (
         <div>
-          
           {
             this.props.children
           }
