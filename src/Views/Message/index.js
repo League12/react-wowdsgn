@@ -5,6 +5,7 @@ class Message extends React.Component {
         return (
             <div>
                 Message
+             
             </div>
         );
     }
