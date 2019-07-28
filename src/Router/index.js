@@ -11,6 +11,7 @@ import Center from '../Views/Center';
 import Detail from '../Views/Detail';
 import GoodsList from '../Views/GoodsList';
 import Search from '../Views/Search';
+import QueryList from '../Views/QueryList';
 
 
 let router = <Provider store={store}>
@@ -25,6 +26,7 @@ let router = <Provider store={store}>
                     <Route path="/detail/:goodId" component={Detail} />
                     <Route path="/goodslist/:goodsName" component={GoodsList} />
                     <Route path="/search" component={Search} />
+                    <Route path="/querylist/:queryId" component={QueryList} />
                     <Redirect from="/" to="/home" />
                 </Switch>
             </App>

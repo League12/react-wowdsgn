@@ -30,7 +30,7 @@ img {
 
 * {
   box-sizing: border-box;
-  touch-action: none;
+  /*touch-action: none;*/
 }
 
 

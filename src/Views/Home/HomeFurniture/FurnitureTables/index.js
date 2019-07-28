@@ -22,7 +22,7 @@ class FurnitureTables extends React.Component {
                         })
                     }
                 </ul>
-                <p><span>查看全部</span></p>
+                <p onClick={this.handlePClick.bind(this)}><span>查看全部</span></p>
             </div>
         );
     }
@@ -31,6 +31,10 @@ class FurnitureTables extends React.Component {
         let img = productImg.replace(new RegExp("/", "g"), "\\");
         let name = productName.replace(new RegExp("/", "g"), "\\");
         this.props.history.push(`/detail/${JSON.stringify([productId, parentProductId, name, sellPrice, img])}`);
+    }
+
+    handlePClick() {
+        this.props.history.push(`/querylist/11161`);
     }
 }
 

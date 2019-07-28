@@ -40,7 +40,6 @@ class Detail extends React.Component {
             productPrice: arr[3],
             productImg: img
         }, () => {
-
             axios.get(`/itemdetail/skuInfos/${this.state.productId}?_=1564120307446`).then(res => {
                 this.setState({
                     attribute: res.data.data.skuAttrPairs

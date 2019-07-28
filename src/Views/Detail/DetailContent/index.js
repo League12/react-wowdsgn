@@ -7,11 +7,10 @@ class DetailContent extends React.Component {
             <div className={css.detailContent}>
                 {
                     this.props.info.filter((item, index) => index >= 1).map((item, index) => {
-                        return (
-                            !item.content.indexOf("https") ?
-                                <img src={item.content} alt="img" key={index}/>
-                                : null
-                        );
+                        if (typeof item.content === "string" && !item.content.indexOf("https")) {
+                            return <img src={item.content} alt="img" key={index}/>
+                        }
+                        return null
                     })
                 }
             </div>
