@@ -12,6 +12,7 @@ import DetailOtherInfo from './OtherInfo';
 import DetailRecommend4You from './DetailRecommend4You';
 import DetailServer from './DetailServer';
 
+
 class Detail extends React.Component {
 
     state = {
