@@ -5,7 +5,7 @@ import Carheader from './carheader'
 import Carbody from './carbody'
 
 class Shopcar extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.hideFooterBar();
 
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ListDetailNavbar from './ListDetailNavbar'
 import ListDetailContent from './ListDetailContent'
-
+import { connect } from 'react-redux';
+import { showFooterBar, hideFooterBar } from "../../Shopcar/actionCreator";
 class ListDetail extends Component {
     state = {
         number:null
@@ -18,5 +19,18 @@ class ListDetail extends Component {
             </div>
         ) 
     }
+    componentDidMount() {
+        this.props.hideFooterBar();
+
+
+    }
+
+    componentWillUnmount() {
+        this.props.showFooterBar();
+    }    
 }
-export default ListDetail;
+let mapDispatch2Props = {
+    showFooterBar,
+    hideFooterBar
+};
+export default connect(null, mapDispatch2Props)(ListDetail);

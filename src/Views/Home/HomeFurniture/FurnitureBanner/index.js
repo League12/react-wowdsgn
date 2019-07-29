@@ -10,18 +10,13 @@ class FurnitureBanner extends React.Component {
                     {
                         this.props.info.banners.map((item) => {
                             return (
-                                <img src={item.bannerImgSrc} alt={item.bannerTitle} key={item.id}
-                                     onClick={this.handleImgClick.bind(this, item.bannerLinkUrl)}/>
+                                <img src={item.bannerImgSrc} alt={item.bannerTitle} key={item.id} />
                             );
                         })
                     }
                 </Carousel>
             </div>
         );
-    }
-
-    handleImgClick(url) {
-        window.location.assign(url);
     }
 }
 

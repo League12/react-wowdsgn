@@ -2,6 +2,8 @@
     &>ul{
         height: .4rem;
         display: flex;
+        margin-bottom: 0;
+        background: #Fff;
         &>li{
             flex: 1;
             text-align: center;
@@ -15,6 +17,8 @@
         width: 49.8%;
         height: 2.8rem;
         float: left;
+        background: #Fff;
+        margin-bottom: 0;
         &>dt{
             &>img{
                 width: 100%;

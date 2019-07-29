@@ -32,7 +32,7 @@ class GoodsList extends React.Component {
                 }}/>
 
                 <GoodsListGroup categray={this.props.match.params.goodsName} sort={this.state.sort}
-                                order={this.state.order} />
+                                order={this.state.order} {...this.props}/>
             </div>
         );
     }

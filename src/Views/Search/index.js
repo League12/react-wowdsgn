@@ -4,6 +4,7 @@ import {hideFooterBar, showFooterBar} from "./actionCreator";
 import SearchHeader from './SearchHeader';
 import SearchRecommend from './SearchRecommend';
 import SearchHistory from './SearchHistory';
+import css from './index.module.scss';
 
 class Search extends React.Component {
 
@@ -17,7 +18,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={css.search}>
                 <SearchHeader {...this.props} />
                 <SearchRecommend {...this.props} />
                 <SearchHistory />

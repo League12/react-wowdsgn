@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import scc from './carbody.module.scss'
 import axios from 'axios'
 import FilmItem from '../Caritem'
@@ -8,18 +8,17 @@ class carbody extends React.Component{
 
     state ={
         datalist:[]
-    }
+    };
 
     componentWillMount(){
         axios.get("/recommend/cart?currentPage=1&_=1563966689551").then(res=>{
-            console.log(res.data.data)
             this.setState({
                datalist:res.data.data
             })
         })
     }
 
-    
+
     render(){
         return(
             <div>
@@ -33,17 +32,16 @@ class carbody extends React.Component{
                 </div>
                 <ul>
 
-                    
                 {
-                this.state.datalist.map(item=> 
-                   <FilmItem key={item.productId} info={item} /> 
-                )   
+                this.state.datalist.map(item=>
+                   <FilmItem key={item.productId} info={item} />
+                )
                  }
-                
+
                  <div className={scc.clierr}></div>
                  </ul>
                 <PullTo></PullTo>
-                
+
             </div>
         );
 

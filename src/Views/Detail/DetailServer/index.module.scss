@@ -1,0 +1,22 @@
+div.detailServer {
+  height: 1.36rem;
+  border-top: .17rem solid #f5f5f5;
+  border-bottom: .59rem solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  span:nth-of-type(1) {
+    font-size: .11rem;
+    color: black;
+    padding-left: .25rem;
+    padding-right: .1rem;
+  }
+  span:nth-of-type(2) {
+    font-size: .09rem;
+    color: #ff7070;
+    margin-right: 1.1rem;
+  }
+  img {
+    width: .3rem;
+  }
+}

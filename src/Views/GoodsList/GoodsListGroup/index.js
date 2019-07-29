@@ -1,5 +1,4 @@
 import React from 'react';
-import { PullToRefresh } from 'antd-mobile';
 import axios from 'axios';
 import css from './index.module.scss';
 
@@ -8,14 +7,16 @@ class GoodsListGroup extends React.Component {
     state = {
         datalist: [],
         page: 1,
-        down: false,
-        refreshing: false,
         sort: "onShelfTime",
         order: "desc",
         categray: this.props.categray
     };
 
+    flag = true;
+
     componentWillMount() {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
         let keyWord = encodeURIComponent(this.props.categray);
         axios.get(`/product/search?keyword=${keyWord}&sort=${this.props.sort}&order=${this.props.order}&currentPage=1&_=1564098588318`)
             .then(res => {
@@ -23,6 +24,22 @@ class GoodsListGroup extends React.Component {
                     datalist: res.data.data.products
                 })
             });
+    }
+
+    componentDidMount() {
+        window.onscroll = this.handleScroll.bind(this);
+    }
+
+    handleScroll() {
+        if (this.flag) {
+            let lastLi = document.querySelector("div[class^='GoodsListGroup'] ul li:last-of-type");
+            if (lastLi) {
+                if (lastLi.getBoundingClientRect().top < window.innerHeight) {
+                    this.flag = false;
+                    this.getData();
+                }
+            }
+        }
     }
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -45,21 +62,14 @@ class GoodsListGroup extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        window.onscroll = null;
+    }
+
 
     render() {
         return (
             <div className={css.goodsListGroup}>
-                <PullToRefresh
-                    damping={60}
-                    style={{
-
-                    }}
-                    direction={this.state.down ? 'down' : 'up'}
-                    refreshing={this.state.refreshing}
-                    onRefresh={() => {
-                        this.getData();
-                    }}
-                >
                     {
                         this.state.datalist.length ?
                             <ul>
@@ -67,7 +77,8 @@ class GoodsListGroup extends React.Component {
                                     this.state.datalist.map(item => {
                                         return (
                                             <li key={item.productId} onClick={() => {
-                                                this.handleLiClick(item.productId);
+                                                this.handleLiClick(item.productId, item.parentProductId,
+                                                    item.productName, item.sellPrice, item.productImg);
                                             }}>
                                                 <img src={item.productImg} alt={item.productTitle} />
                                                 <p>{item.productTitle}</p>
@@ -79,13 +90,14 @@ class GoodsListGroup extends React.Component {
                             </ul>
                             : null
                     }
-                </PullToRefresh>
             </div>
         );
     }
 
-    handleLiClick(id) {
-        console.log(id)
+    handleLiClick(productId, parentProductId, productName, sellPrice, productImg) {
+        let img = productImg.replace(new RegExp("/", "g"), "\\");
+        let name = productName.replace(new RegExp("/", "g"), "\\");
+        this.props.history.push(`/detail/${JSON.stringify([productId, parentProductId, name, sellPrice, img])}`);
     }
 
     getData() {
@@ -98,6 +110,8 @@ class GoodsListGroup extends React.Component {
             .then(res => {
                 this.setState({
                     datalist: [...this.state.datalist, ...res.data.data.products]
+                }, () => {
+                    this.flag = true;
                 });
             });
     }

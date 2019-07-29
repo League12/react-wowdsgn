@@ -81,18 +81,13 @@ class ListDetailContent extends Component {
                 }}
             >
                 {this.state.datalist.map((item) => 
-                    <dl key={item.productId}>
+                    <dl key={item.productId} onClick = {() => {this.handleDivClick( item.productId, item.parentProductId,
+                        item.productName, item.sellPrice, item.productImg)}}>
                         <dt><img src={item.productImg} alt=""/></dt>
                         <dd><p>{item.productTitle}</p><span>￥{item.sellPrice}</span></dd>
                     </dl>
                 )}
             </PullToRefresh>
-                {/* {this.state.datalist.map((item) => 
-                    <dl key={item.productCode}>
-                        <dt><img src={item.productImg} alt=""/></dt>
-                        <dd><p>{item.productTitle}</p><span>￥{item.sellPrice}</span></dd>
-                    </dl>
-                )} */}
             </div>
         )
     }
@@ -129,6 +124,12 @@ class ListDetailContent extends Component {
         () =>{
            this.ajax(this.state.itemIdinfo_123) 
         })
+    }
+
+    handleDivClick(productId, parentProductId, productName, sellPrice, productImg) {
+        let img = productImg.replace(new RegExp("/", "g"), "\\");
+        let name = productName.replace(new RegExp("/", "g"), "\\");
+        this.props.history.push(`/detail/${JSON.stringify([productId, parentProductId, name, sellPrice, img])}`);
     }
 }
 

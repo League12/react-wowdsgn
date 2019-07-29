@@ -4,6 +4,7 @@ body,h1,h2,h3,h4,h5,h6,ul,ol,li,dd,dt,p,a,span,input,select,button,header,footer
 
 html,body {
   height: 100%;
+  background-color: white;
 }
 
 html {
@@ -30,6 +31,7 @@ img {
 
 * {
   box-sizing: border-box;
+  /*touch-action: none;*/
 }
 
 
