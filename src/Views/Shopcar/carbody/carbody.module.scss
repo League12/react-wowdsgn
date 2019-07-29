@@ -1,0 +1,44 @@
+.kong{
+    width: 100%;
+    height: .9rem;
+    background: #f5f5f5;
+    p{
+        padding-top: .1rem;
+        text-align: center;
+    }
+   
+    button{
+        width: 1rem;
+        height: .4rem;
+        background: #ffd444;
+        border: 0;
+        margin-top: .1rem;
+    }
+    button:nth-of-type(1){
+        bottom: .07rem;
+        margin-left: .8rem;
+    }
+    button:nth-of-type(2){
+        bottom: .07rem;
+        margin-left: .1rem;
+    }
+}
+.recommended{
+    width: 100%;
+    height: .61rem;
+    border-bottom: 1px solid #f5f5f5;
+    p{
+        width: 100%;
+        height: .61rem;
+        text-align: center;
+        line-height: .61rem;
+    }
+}
+.clierr{
+    clear: both;
+    height: 0;
+    width: 100%;
+}
+p{
+    margin-bottom: 0;
+}

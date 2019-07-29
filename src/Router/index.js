@@ -23,8 +23,8 @@ let router = <Provider store={store}>
                     <Route path="/shopcar" component={Shopcar} />
                     <Route path="/message" component={Message} />
                     <Route path="/center" component={Center} />
-                    <Route path="/detail" component={Detail} />
-                    <Route path="/goodslist" component={GoodsList} />
+                    <Route path="/detail/:goodId" component={Detail} />
+                    <Route path="/goodslist/:goodsName" component={GoodsList} />
                     <Route path="/search" component={Search} />
                     <Route path="/list/:itemId" component={ListDetail} exact/>
                     <Redirect from="/" to="/home" />

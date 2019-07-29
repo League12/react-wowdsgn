@@ -1,0 +1,32 @@
+div.homeNav {
+  height: .38rem;
+  width: 100%;
+  ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    li {
+      height: 100%;
+      a {
+        display: block;
+        height: 100%;
+        line-height: .38rem;
+        padding: 0 .1rem;
+        text-decoration: none;
+        font-size: .12rem;
+        color: #808080;
+      }
+    }
+  }
+
+  .homeActiveLink {
+    color: #202020;
+    font-weight: bold;
+    border-bottom: 3px solid #202020;
+  }
+
+}
+
+
