@@ -11,6 +11,7 @@ import Center from '../Views/Center';
 import Detail from '../Views/Detail';
 import GoodsList from '../Views/GoodsList';
 import Search from '../Views/Search';
+import ListDetail from "../Views/List/ListDetail"
 
 
 let router = <Provider store={store}>
@@ -18,13 +19,14 @@ let router = <Provider store={store}>
             <App>
                 <Switch>
                     <Route path="/home" component={Home} />
-                    <Route path="/list" component={List} />
+                    <Route path="/list" component={List} exact/>
                     <Route path="/shopcar" component={Shopcar} />
                     <Route path="/message" component={Message} />
                     <Route path="/center" component={Center} />
                     <Route path="/detail" component={Detail} />
                     <Route path="/goodslist" component={GoodsList} />
                     <Route path="/search" component={Search} />
+                    <Route path="/list/:itemId" component={ListDetail} exact/>
                     <Redirect from="/" to="/home" />
                 </Switch>
             </App>

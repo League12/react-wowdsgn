@@ -1,0 +1,47 @@
+.goodList{
+    margin-bottom: .44rem;
+    &>div{
+        height: .44rem;
+        padding: 0 .1rem;
+        line-height: .44rem;
+        &>input{
+            margin: 0 0 .025rem .075rem;
+            height: .28rem;
+            width: 2.7rem;
+            border-radius: .14rem;
+            border:none;
+            outline: none;
+            background: #F5F5F5;
+            line-height: .28rem;
+            display: inline-block;
+            vertical-align: middle;
+            text-indent: .25rem;
+        }
+    }
+    &>img{
+        height: 1.15rem;
+        width: 3.45rem;
+        margin: 0 auto;
+        margin-top: .1rem;
+    }
+    &>ul{
+        margin: 0 auto;
+        width: 3.45rem;
+        &>li{
+            height: .5rem;
+            width: 3.45rem;
+            line-height: .5rem;
+            border-bottom: 1px solid #eaeaea;
+            text-indent: 0.15rem;
+            font-size: .15rem;
+            &>span{
+                height: .49rem;
+                width: .3rem;
+                float: right;
+                color: #ccc;
+                font-size: 0.25rem;
+                text-indent: 0rem;
+            }
+        }
+    }
+}

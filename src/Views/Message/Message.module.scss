@@ -1,0 +1,31 @@
+.message{
+    & > header {
+        height: 0.44rem;
+        border-bottom: 1px solid #f5f5f5;
+        padding: 0 0.1rem;
+        position: relative;
+        background: #fff;
+        & > img {
+          height: 0.26rem;
+          width: 0.26rem;
+          margin: 0.03rem 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        img:nth-of-type(1){
+            left: .08rem;
+        }
+        img:nth-last-of-type(1){
+            right: .08rem;
+        }
+        & > h3 {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          height:100%;
+          line-height: .44rem;
+          font-size: .17rem;
+        }
+      }
+}

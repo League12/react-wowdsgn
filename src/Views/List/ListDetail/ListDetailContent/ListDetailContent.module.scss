@@ -1,0 +1,41 @@
+.listDetailContent{
+    &>ul{
+        height: .4rem;
+        display: flex;
+        &>li{
+            flex: 1;
+            text-align: center;
+            margin: 0rem 0.38rem;
+            line-height: .4rem;
+            color: #808080;
+            font-size: .13rem;
+        }
+    }
+    dl{
+        width: 49.8%;
+        height: 2.8rem;
+        float: left;
+        &>dt{
+            &>img{
+                width: 100%;
+            }
+        }
+        &>dd{
+            &>p{
+                color: #808080;
+                font-size: 0.13rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;  
+                margin: .25rem 0 .02rem .15rem;
+            }
+            &>span{
+                font-size: 0.13rem;
+                color: #000;
+                margin-right: 0.05rem;
+                margin-left: 0.15rem;
+            }
+        }
+    }
+}
