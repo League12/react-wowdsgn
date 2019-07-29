@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import css from './ListDetailContent.module.scss'
 import axios from 'axios'
-import {PullToRefresh} from 'antd-mobile'
 
 class ListDetailContent extends Component {
     state = {
@@ -23,7 +22,17 @@ class ListDetailContent extends Component {
             currentPage:1,
         })
         this.ajax(itemIdinfo)
-        // console.log(this.state.datalist)
+
+        window.onscroll = () =>{
+            if(document.querySelector("dl:nth-last-of-type(1)")){
+            if(document.querySelector("dl:nth-last-of-type(1)").getBoundingClientRect().top<(window.innerHeight-250)){
+                this.setState({
+                    currentPage:this.state.currentPage+1
+                })
+                this.ajax(this.state.itemIdinfo_123)
+            }
+            }
+        }
     }
 
     componentWillReceiveProps(props){
@@ -34,9 +43,12 @@ class ListDetailContent extends Component {
             order: "desc",
             currentPage:1,
             datalist:[]
+        },
+        () =>{
+            this.ajax(itemIdinfo_1)  
         })
-        this.ajax(itemIdinfo_1)  
-        // console.log(this.state.datalist)
+        
+
     }
 
     ajax = (Id) =>{
@@ -55,31 +67,6 @@ class ListDetailContent extends Component {
                     <li onClick={()=>this.lookSell()}>销量</li>
                     <li onClick={()=>this.lookPrice()}>价格</li>
                 </ul>
-
-                <PullToRefresh
-                damping={60}
-                style={{
-                width: "100%",
-                height: "100%",
-                overflow: 'auto',
-                }}
-                // indicator={this.state.down ? {} : { deactivate: '111上拉可以刷新' }}
-                direction={this.state.down ? 'down' : 'up'}
-                refreshing={this.state.refreshing}
-                onRefresh={() => {
-                    this.setState({
-                        refreshing:false
-                    })
-                    setTimeout(()=>{
-                        this.setState({
-                            refreshing:false,
-                            currentPage:this.state.currentPage+1
-                        },() =>{
-                            this.ajax(this.state.itemIdinfo_123) 
-                         })
-                    },10)
-                }}
-            >
                 {this.state.datalist.map((item) => 
                     <dl key={item.productId} onClick = {() => {this.handleDivClick( item.productId, item.parentProductId,
                         item.productName, item.sellPrice, item.productImg)}}>
@@ -87,7 +74,7 @@ class ListDetailContent extends Component {
                         <dd><p>{item.productTitle}</p><span>￥{item.sellPrice}</span></dd>
                     </dl>
                 )}
-            </PullToRefresh>
+            
             </div>
         )
     }
