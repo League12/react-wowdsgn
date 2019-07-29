@@ -31,7 +31,7 @@ class carbody extends React.Component{
                     <p>-为您推荐-</p>
                 </div>
                 <ul>
-                    
+
                 {
                 this.state.datalist.map(item=>
                    <FilmItem key={item.productId} info={item} />

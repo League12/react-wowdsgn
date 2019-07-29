@@ -8,7 +8,7 @@ class FurnishingDesign extends React.Component {
             <div className={css.FurnishingDesign}>
                 <h2>{this.props.info.moduleName}</h2>
                 <h3>{this.props.info.moduleDescription}</h3>
-                <Carousel slideWidth={0.27} selectedIndex={1.2} cellSpacing={10}>
+                <Carousel slideWidth={0.27} selectedIndex={1.2} cellSpacing={10} dots={false}>
                     {
                         this.props.info.moduleContent.products.map(item => {
                             return (
